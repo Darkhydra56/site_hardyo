@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Site CV de Yoann Hardy - Page d'accueil</title>
+        <link rel="stylesheet" href="/css/normalize.css" />
+        <link rel="stylesheet" href="/css/main.css" />
+    </head>
+    <body>
+        <header id="mainHeader">
+            <h1>YOANN HARDY</h1>
+            <nav id="mainNav">
+                <h1 class="accessibility">Menu principal</h1>
+                <p class="accessibility"><a href="#pageContent" title="Accéder directement au contenu principal de cette page">Passer le menu</a></p>
+                <ul>
+                    <li><a href="index.html" title="Vers la page d'accueil'">Accueil</a></li>
+                    <li><a href="cv.html" title="Vers la page de mon CV">CV</a></li>
+                    <li><a href="book.html" title="Voir mes réalisations">Book</a></li>
+                    <li><a href="contact.html" title="Laissez vos coordonnées et votre message">Contact</a></li>
+                </ul>
+            </nav>
+            <button id="menuToggle"><img src="/img/layout/hamburger.svg" alt="Ouvrir / Fermer le menu" /></button>
+        </header><!--Ici se termine le #mainHeader-->
+        <section id="pageContent" class="text contact">
+            <main>
+                <h1>Contactez-moi</h1>
+                <p>Merci de compléter le formulaire suivant pour me contacter. Tous les champs de ce formulaire sont requis.</p>
+                <form id="frmContact" action="merci.html">
+                    <div>
+                        <div>
+                            <label for="firstName">Prénom</label>
+                            <input name="firstName" id="firstName" required autofocus />
+                        </div>
+                        <div>
+                            <label for="lastName">Nom de famille</label>
+                            <input type="text" name="lastName" id="lastName" required />
+                        </div>
+                        <div>
+                            <label for="email">Votre e-mail</label>
+                            <input type="email" name="email" id="email" required />
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <label for="message">Votre message</label>
+                            <textarea name="message" id="message" required></textarea>
+                        </div>
+                    </div>
+                    <button type="submit">Envoyer</button>
+                </form>
+            </main>
+        </section><!--Ici se termine le #pageContent-->
+        <footer id="mainFooter">
+            <p>&copy; Copyright Yoann Hardy - 2020</p>
+        </footer><!--Ici se termine le #mainFooter-->
+    </body>
+</html>

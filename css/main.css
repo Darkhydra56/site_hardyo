@@ -1,0 +1,257 @@
+/******************       GENERAL    *********************/
+
+@import url('https://fonts.googleapis.com/css?family=Cantarell|Raleway&display=swap');
+
+:root {
+    --black: #333333;
+    --white: #FFFFFF;
+    --tWhite: rgba(255,255,255,0.6);
+    box-sizing: border-box;
+}
+* {
+    box-sizing: inherit;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+.accessibility {
+    position: absolute;
+    left: -15000px;
+}
+#mainHeader, #mainFooter{
+    background-color: var(--black);
+}
+
+/*****************     HEADER        ***********************/
+
+#mainHeader {
+    height: 80px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    display: grid;
+    grid-template-columns: 100px 1fr;
+}
+#mainHeader > h1 {
+    color: var(--white);
+    font-family: Cantarell, Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1em;
+    font-weight: normal;
+    display: flex;
+    align-items: center;
+    height: 40px;
+    padding-left: 20px;
+}
+#mainHeader > h1 > a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.5rem;
+}
+#mainNav {
+    position: absolute;
+    width: 100%;
+    top: 40px;
+    padding-bottom: 10px;
+    display: none;
+}
+#mainNav ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+}
+#mainNav a{
+    color: var(--white);
+    text-decoration: none;
+    font-family: Cantarell, Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 2em;
+    display: block;
+}
+#mainNav a:hover{
+    color: greenyellow;
+}
+#menuToggle {
+    width: 40px;
+    height: 40px;
+    background-color: transparent;
+    border: none;
+}
+
+/*********************      Body     ******************************/
+
+main {
+    background-color: var(--tWhite);
+    padding: 20px;
+}
+#pageContent {
+    background: url(/img/coding-on-laptop.jpg) center center / cover no-repeat fixed;
+    padding: 100px 20px;
+    min-height: 100vh;
+}
+#pageContent.text h2{
+    font-size: 1.5em;
+    font-weight: normal;
+    letter-spacing: .1em;
+    margin-top: 50px;
+}
+#pageContent.text img{
+    max-width: 100%;
+    height: auto;
+}
+#pageContent.text .alignLeft {
+    float: left;
+}
+#pageContent.text .alignRight {
+    float: right;
+}
+#pageContent.text dl {
+    border: 1px solid var(--black);
+    border-radius: 10px;
+    background-color: var(--white);
+    padding: 20px;
+    color: var(--black);
+}
+#pageContent.text dl dt {
+    font-weight: bold;
+    font-size: 1.2em;
+}
+#pageContent.text dl dd {
+    margin: 10px 0 10px 20px;
+}
+
+/***********     PAGE HOME      *********/
+#presentation {
+    background-color: var(--tWhite);
+    padding: 20px;
+}
+#presentation h1{
+    text-align: center;
+    font-size: 4rem;
+    color: white;
+    text-shadow: 0.1em 0.1em 0.1em black;
+}
+
+
+/***********     PAGE CV      *********/
+
+
+/*************      PAGE BOOK      **********/
+
+#pageContent.book ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    align-content: space-between;
+ }
+#pageContent.book ul li{
+    background-color: var(--white);
+    padding: 10px;
+}
+#pageContent.book ul li a{
+    color: var(--black);
+    text-decoration: none;
+}
+#pageContent.book ul li:hover{
+    background-color: green;
+}
+#pageContent.book ul li:hover h2{
+    color: white;
+}
+#pageContent.book ul li:hover p{
+    color: white;
+}
+
+/**********      PAGE CONTACT     ***********/
+
+#pageContent.contact form{
+    border-top: solid 1px black;
+    display: grid;
+}
+#pageContent.contact form > div > div {
+    margin: 20px 0;
+    display: flex;
+    flex-direction: column;
+}
+#pageContent.contact form label{
+    margin-bottom: 5px;
+    font-size: 1.1em;
+}
+#pageContent.contact form textarea {
+    height: 150px;
+    resize: none;
+}
+#pageContent.contact form button{
+    padding: 10px;
+    background-color: green;
+    color: var(--white);
+    border: none;
+    margin-top: 30px;
+}
+#pageContent.contact form button:hover{
+    background-color: limegreen;
+}
+#pageContent.contact form button:active{
+    background-color: green;
+}
+/***************      FOOTER       ****************/
+
+#mainFooter{
+    height: 40px;
+    width: 100%;
+    font-size: .5em;
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--white);
+}
+
+/***************        RESPONSIVE         ***************/
+
+@media screen and (min-width: 768px){
+    #menuToggle {
+        display: none;
+    }
+    #mainNav{
+        position: static;
+        background-color: transparent;
+        display: block !important;
+    }
+    #mainNav ul{
+        flex-direction: row;
+        justify-content: flex-end;
+        height: 40px;
+        align-items: center;
+    }
+    #mainNav a{
+        font-size: 1.2em;
+        padding: 0 10px;
+    }
+    #pageContent.book ul{
+        flex-direction: row;
+     }
+}
+@media screen and (min-width: 1024px){
+    #mainHeader {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    #mainHeader > h1 {
+        font-size: 1.4em;
+    }
+    #pageContent.contact form{
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 20px;
+    }
+    #pageContent.contact form button {
+        grid-column: span 2;
+    }
+}
+@media screen and (min-width: 1200px){
+   
+}
+
